@@ -67,11 +67,11 @@ $carrinho = new \Classes\Carrinho();
 
 
 
-      <div class="carrinho">
+ <div class="shopping-cart-container">
 
 
 
-<div class="card-quantity">  
+  <div class="card-quantity">  
 
 
    <?php
@@ -140,26 +140,7 @@ $carrinho = new \Classes\Carrinho();
 
 
 
-<section class="secao-main">
-
-
- 
-
-
-
-
-
- 
-
-
- 
-
-
-
-   
-
-
-
+<section class="secao-main-checkout">
 
 
 
@@ -571,6 +552,8 @@ $carrinho = new \Classes\Carrinho();
 
 
 
+<!-- 
+  
 <script>
 
   const mp = new MercadoPago('YOUR_PUBLIC_KEY', {
@@ -581,7 +564,7 @@ const renderCardPaymentBrick = async (bricksBuilder) => {
   const settings = {
     initialization: {
     //amount: 100, // valor total a ser pago
-      amount: <?php echo $carrinho->getTotal(); ?> , // valor total a ser pago
+      amount: <?php //echo $carrinho->getTotal(); ?> , // valor total a ser pago
       payer: {
         email: "",
       },
@@ -631,7 +614,9 @@ const renderCardPaymentBrick = async (bricksBuilder) => {
 };
 renderCardPaymentBrick(bricksBuilder);
 
-</script>
+</script> 
+
+-->
 
 
 
