@@ -7,22 +7,21 @@
 require_once 'Conn.php' ;
 
 
-class DataBase  extends Conn
+class DataBase extends Conn
 {
 
 
  
    
-
-
+  private $conn = "";
+  private $pdo = "";
 
 
    function __construct()
     {
        
        $this->conn = new Conn();
-       $this->pdo  =$this->conn->pdo();       
-        
+       $this->pdo  =$this->conn->pdo();   
     }
 
 

@@ -125,7 +125,7 @@ header img {
 
 .card-quantity{
     width: 100px;
-    height: 50px;
+    height: auto;
     display: flex;
     justify-content: space-evenly;  
     border-radius: 50px; 
@@ -562,9 +562,12 @@ font-family: 'Open Sans', sans-serif;
 
 
 .fotter-contatos  {
-    width: 30%;
-    height: 340px;
-    padding: 20px;
+    width: 220px;
+    height:500px;
+
+    padding-top: 18px;
+   
+    /* padding: 20px; */
     
     /* background-color: rgba(39, 69, 19, 0.7);
     background-image: linear-gradient(to top, transparent, rgba(139, 60, 18, 0.8));
@@ -572,11 +575,28 @@ font-family: 'Open Sans', sans-serif;
     flex-wrap: wrap; */
 }
 
-.fotter-contatos ul {
-    display: block;
-    justify-content: space-between;
-    cursor: pointer;
+
+.rede-sociais{ 
+  width: auto;
+  height: 120px;
+  display: block; 
 }
+
+
+.rede-contatos{
+  width:auto;
+  height: 280px;
+  display: block; 
+  margin-top: 20px;
+}
+
+
+
+
+.fotter-contatos ul {
+    display: block;   
+    cursor: pointer;
+ }
 
 .fotter-contatos p{
      font-family: 'Open Sans', sans-serif;
@@ -766,9 +786,9 @@ font-family: 'Open Sans', sans-serif;
 
 
 
-
          .fotter-main .fotter-contatos  {
                height: 410px;
+               width: 80px;
          }
 
          .fotter-main .fotter-contatos ul {
@@ -1408,7 +1428,7 @@ font-family: 'Open Sans', sans-serif;
 .secao-main-checkout {
     width: auto;
     height: auto;
-    background-color: rgba(255, 210, 18, 0.3);
+    background-color: rgba(255, 210, 18, 0.3); 
     background-image: linear-gradient(to bottom, transparent, rgba(193, 130, 18, .9));
     box-shadow: 5px 5px 8px 5px rgba(0, 0, 0, 0.7);
     
@@ -1440,12 +1460,13 @@ font-family: 'Open Sans', sans-serif;
 
 .compras{
     width: auto;
-    height: 300px;
+    height: 200px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: #8B4513;
     padding-bottom: 100px;
+    margin-bottom: 10px;
 } 
 
 
@@ -1500,10 +1521,16 @@ font-family: 'Open Sans', sans-serif;
       
    
     .products-request{
-       padding-left: 2px;
+       /* padding-left: 2px;
        padding-right: 2px;
-       padding-bottom: 20px;
+       padding-bottom: 20px; */
        
+       padding: 0%;
+       margin-top: 10px;
+
+       display: block;
+      text-align: center;
+      align-items: center;  
     }
 
     .products-request .table{
@@ -1511,12 +1538,24 @@ font-family: 'Open Sans', sans-serif;
      }
 
    
+
+     .products-request th{       
+        font-size: 0.7666rem;
+      
+      }
+      
+      .products-request td{
+        font-size: 0.7444rem;
+        }
+
+        
+
         
     .products-request .compras{
         width: 98%;
         height: 300px;
         display: block;
-        padding-top: 20px;  
+        
      } 
 
     .products-request .compras .card-empty {
