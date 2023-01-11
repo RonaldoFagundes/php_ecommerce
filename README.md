@@ -2,9 +2,13 @@
 eCommerce/Mercado Pago
 
 front-end :  html - css - bootstrap - javascript
+ &nbsp;
+
 back-end  :  php/composer
+ &nbsp;
+
 Banco de Dados : MySQL
-  &nbsp;
+ &nbsp;
    
    
   ## Front-End :
@@ -29,8 +33,6 @@ Banco de Dados : MySQL
 - composer -> Classes do autoload e sdk do mercado pago
 
 
-<div style="display:flex; justify-content: space-evenly;">
-  <img src="" width="220px" height="400px"/>
- </div>
+
 
 &nbsp;
