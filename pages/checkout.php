@@ -246,7 +246,15 @@ $carrinho = new \Classes\Carrinho();
 
              <div class="carrinho-valor">
                 <p>Total R$
-                   <?php echo $carrinho->getTotal(); ?>
+
+                   
+
+                   <?php 
+                    /*  echo $carrinho->getTotal(); */
+                        echo number_format($carrinho->getTotal(),2);                    
+                    ?>
+
+
                 </p>
              </div>
 

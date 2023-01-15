@@ -38,16 +38,15 @@ class DataBase extends Conn
 public function listarProdutos()
 {       
   
-   $query = $this->pdo->query("SELECT * FROM `produtos` ");
+  $query = $this->pdo->query("SELECT * FROM `tb_produtos` ");
    $fetch = $query->fetchAll(PDO::FETCH_OBJ);
    
-     if(count ($fetch)>0){
-      $query = $this->pdo->query("SELECT * FROM `produtos` ");
+     if(count ($fetch) >0 ){
+      $query = $this->pdo->query("SELECT * FROM `tb_produtos` ");
       return $query;
      }else{
       return false;
-     }
-   
+     } 
 
 }
 
@@ -56,11 +55,19 @@ public function listarProdutos()
 
 
 
-public function addShopCar($id , $quantidade)
+public function addShopCar($id , $quantidade, $status)
 {
-   $query = $this->pdo->prepare("UPDATE `produtos` SET carrinho= :quantidade WHERE id= :id ");
+    /* 
+   $query = $this->pdo->prepare("UPDATE `tb_produtos` SET carrinho= :quantidade WHERE id= :id ");
+    */
+
+   $query = $this->pdo->prepare("UPDATE `tb_pedidos` SET carrinho= :quantidade , status= :status   
+   WHERE id_produto= :id ");
+
+
    $query->bindValue(':id', $id);
    $query->bindValue(':quantidade', $quantidade);
+   $query->bindValue(':status', $status);
    $query->execute();
 
 }
@@ -69,34 +76,48 @@ public function addShopCar($id , $quantidade)
 
 
 
-public function setSell($finish)
+public function emptyShopCar($quantidade, $status)
 {
- $query = $this->pdo->prepare("UPDATE `produtos` SET vendas=:finish WHERE carrinho > 0 ");
- $query->bindValue(':finish',$finish);
+  // $query = $this->pdo->prepare("UPDATE `tb_produtos` SET carrinho= :quantidade "); 
+  
+  $query = $this->pdo->prepare("UPDATE `tb_pedidos` SET carrinho= :quantidade , status= :status ");
+
+   $query->bindValue(':quantidade', $quantidade);
+   $query->bindValue(':status', $status);
+   $query->execute();
+
+}
+
+
+
+ public function finishRequest($newStatus, $oldStatus)
+{
+
+ $query = $this->pdo->prepare("UPDATE `tb_pedidos` SET status= :newStatus 
+ WHERE status= :oldStatus "); 
+
+ $query->bindValue(':newStatus', $newStatus);
+ $query->bindValue(':oldStatus', $oldStatus);
  $query->execute();
 }
 
 
 
-
-public function emptyShopCar($quantidade)
-{
-   $query = $this->pdo->prepare("UPDATE `produtos` SET carrinho= :quantidade ");   
-   $query->bindValue(':quantidade', $quantidade);
-   $query->execute();
-
-}
-
-
-
-
-
+/*
 public function cancelSell($cancel)
 {
- $query = $this->pdo->prepare("UPDATE `produtos` SET vendas=:cancel ");
+ $query = $this->pdo->prepare("UPDATE `tb_produtos` SET vendas=:cancel ");
  $query->bindValue(':cancel',$cancel);
  $query->execute();
 }
+*/
+
+
+
+
+
+
+
 
 
 

@@ -53,7 +53,8 @@ use DataBase;
           'id'=>$produto->getId(),
           'nome'=>$produto->getNome(),
           'info'=>$produto->getInfo(),
-          'valor'=>$produto->getValor(),
+          'valor'=>number_format($produto->getValor(),2),
+         // 'valor'=>$produto->getValor(),
          // 'qtd'=>$produto->getQtd(),
           'quantity'=>1
        
@@ -107,14 +108,29 @@ use DataBase;
 
 
 
-    
-      public function removeProducts(){
 
-      $dataBase = new DataBase ;       
-      
-      $dataBase->emptyShopCar(0);
-      $dataBase->cancelSell(false);
-      }
+    /*  public function getQuantityByProduct()
+     {
+       
+       $quantity=0;
+
+
+       if(isset($_SESSION['addprodutos'])){ 
+
+        foreach($_SESSION['addprodutos'] as $produto ){
+          $quantity =$produto['quantity'];
+          }
+       }
+        return $quantity;
+
+       
+     } */
+
+
+
+
+    
+     
      
 
 
@@ -124,25 +140,54 @@ use DataBase;
 
       $dataBase = new DataBase ;   
 
+      $status = 'pendente';
+
+       $quantidade=0;
+
         $id = $produto->getId();
-       // $quantidade  =  $produto->getQtd() +1 ;
-        $quantidade  = $this->getQuantity()  ;
 
-      $dataBase->addShopCar($id,$quantidade);
+       //   $quantidade = $this->getQuantityByProduct();
+       //   $quantidade  = $this->getQuantity()  ;
 
+        if(isset($_SESSION['addprodutos'])){ 
 
+        foreach($_SESSION['addprodutos'] as $produto ){
+          $quantidade =$produto['quantity'];
+        }
+
+      }
+        
+      $dataBase->addShopCar($id, $quantidade, $status);
      }
 
 
 
 
+
+     public function removeProducts(){
+
+      $dataBase = new DataBase ;       
+      $status = 'disponivel';
+
+      $dataBase->emptyShopCar(0,$status);
+     // $dataBase->cancelSell(false);
+      }
+
+
+      
+
+
      public function  finishShop(){
 
      // end($_SESSION['addprodutos']);
-      $dataBase = new DataBase ;  
-      $dataBase->setSell(true);
-     } 
+      $dataBase = new DataBase ;
+      
+      $newStatus = 'pagando';
+      $oldStatus ='pendente';
 
+      $dataBase->finishRequest($newStatus, $oldStatus);
+     } 
+    
 
 
 

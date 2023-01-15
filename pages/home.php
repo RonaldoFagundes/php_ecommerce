@@ -350,30 +350,33 @@ $listar_produtos = $produtos->listarProdutos();
     <div class="containner-produto">
 
       <!-- cards -->
+
+      
       <?php
 
 
 
-      if ($listar_produtos) {
+    if ($listar_produtos) {
+
+    
+
+
+      // $produto = $listar_produtos->fetch(PDO::FETCH_OBJ);
 
 
 
 
-        $produto = $listar_produtos->fetch(PDO::FETCH_OBJ);
+      // if ($produto->estoque >= 3) {
+
+             //$carrinho->getQuantityByProduct()
+         
+
+        while ($produto = $listar_produtos->fetch(PDO::FETCH_OBJ)) {
 
 
-        if ($produto->estoque > $carrinho->getQuantity()) {
+           if ($produto->estoque - $produto->vendas  >= 1) {
 
-
-          while ($produto = $listar_produtos->fetch(PDO::FETCH_OBJ)) {
-
-
-
-
-
-
-
-
+               //$carrinho->getQuantityByProduct() 
 
 
             // while ($produto = $listar_produtos->fetch(PDO::FETCH_OBJ)) {
@@ -412,7 +415,14 @@ $listar_produtos = $produtos->listarProdutos();
                   <?= $produto->info; ?>&#x1F60D;
                 </p>
 
-                <p>R$ <?= $produto->valor; ?> </p>
+                <p>R$ 
+                  
+                <?= 
+                  /* $produto->valor; */ 
+                number_format($produto->valor,2);
+                ?> 
+              
+              </p>
 
                 <div class="btn-buy">
                   <!--
@@ -425,14 +435,15 @@ $listar_produtos = $produtos->listarProdutos();
 
 
 
-                  <a type="button" class="btn btn-outline-warning" href="controller/carrinhoController.php?
+               <a type="button" class="btn btn-outline-warning" href="controller/carrinhoController.php?
                  action=add&
                  img=<?= $produto->img; ?>&
                  id=<?= $produto->id; ?>&
                  nome=<?= $produto->nome; ?>&
                  info=<?= $produto->info; ?>&
-                 valor=<?= $produto->valor; ?>">Adicionar ao Carrinho
-                  </a>
+                 valor=<?= $produto->valor; ?>">
+                 Adicionar ao Carrinho
+               </a>
 
 
 
@@ -458,9 +469,11 @@ $listar_produtos = $produtos->listarProdutos();
 
 
           <?php
+           }
+
 
           }
-        } else {
+       } else {
 
 
           ?>
@@ -473,9 +486,9 @@ $listar_produtos = $produtos->listarProdutos();
           </div>
 
       <?php
-        }
-      }
-      ?>
+     //   }
+   }
+ ?>
 
 
 

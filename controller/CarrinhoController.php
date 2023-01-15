@@ -33,9 +33,11 @@ elseif($_GET['action']=='clear'){
    $carrinho->removeProducts();
 }
 
-elseif($_GET['action']=='pay'){
 
+elseif($_GET['action']=='pay'){
+   $carrinho->clearProdutos();
    $carrinho->finishShop();
+   $carrinho->removeProducts();
 }
 
 
