@@ -218,8 +218,9 @@ use DataBase;
                 /*  $html.="<td>".$produto['img']."</td>"; */
                  $html.="<td>".$produto['id']."</td>";
                  $html.="<td>".$produto['nome']."</td>";
-                 $html.="<td>".$produto['info']."</td>";
-                 $html.="<td>".$produto['valor']."</td>";
+                 $html.="<td>".$produto['info']."</td>";                 
+                 $html.="<td>".number_format($produto['valor'],2)."</td>";
+                // $html.="<td>".$produto['valor']."</td>";
                //  $html.="<td>".$produto['quantity']*$produto['valor']."</td>";
                  $html.="<td>".$produto['quantity']."</td>";
 
