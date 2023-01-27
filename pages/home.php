@@ -419,7 +419,7 @@ $listar_produtos = $produtos->listarProdutos();
                   
                 <?= 
                   /* $produto->valor; */ 
-                number_format($produto->valor,2);
+                number_format($produto->preco,2);
                 ?> 
               
               </p>
@@ -441,7 +441,7 @@ $listar_produtos = $produtos->listarProdutos();
                  id=<?= $produto->id; ?>&
                  nome=<?= $produto->nome; ?>&
                  info=<?= $produto->info; ?>&
-                 valor=<?= $produto->valor; ?>">
+                 preco=<?= $produto->preco; ?>">
                  Adicionar ao Carrinho
                </a>
 

@@ -20,7 +20,7 @@ if ($_GET['action']=='add'){
       $_GET['id'],
       $_GET['nome'],
       $_GET['info'],
-      $_GET['valor'],
+      $_GET['preco'],
      // $_GET['qtd']
    );
 

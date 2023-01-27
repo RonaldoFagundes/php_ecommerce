@@ -191,7 +191,7 @@ $carrinho = new \Classes\Carrinho();
 
                 <th scope="col">Descrição</th>
 
-                <th scope="col">Valor</th>
+                <th scope="col">Preço</th>
 
                 <th scope="col">Quantidade</th>
               </tr>

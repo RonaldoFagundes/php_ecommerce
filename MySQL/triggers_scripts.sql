@@ -1,11 +1,5 @@
 
 
-
-
-/*
-
- testes :
-
 select * from tb_produtos;
 
 select * from tb_pedidos;
@@ -16,14 +10,12 @@ update tb_pedidos set carrinho = 2 , status = 'pendente' where id_produto = 5;
 update tb_pedidos set carrinho = 0 , status = 'disponivel' ;
 
 update tb_pedidos set  status = 'pagando' where status = 'pendente';
-*/
+
+
+drop trigger g_pedidos ;
 
 
 
-
-
-
-/* drop trigger g_pedidos ; */
 
 
 

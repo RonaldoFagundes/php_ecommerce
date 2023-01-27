@@ -12,16 +12,16 @@
    private $id;
    private $nome;
    private $info;
-   private $valor;
+   private $preco;
    //private $qtd;
 
-   public function __construct($img ,$id, $nome, $info, $valor)
+   public function __construct($img ,$id, $nome, $info, $preco)
    {
       $this->setImg($img);
       $this->setId($id);
       $this->setNome($nome);
       $this->setInfo($info);
-      $this->setValor($valor);
+      $this->setPreco($preco);
     //  $this->setQtd($qtd);
    }
 
@@ -66,26 +66,17 @@
 
 
 
-public function setValor($valor):void{
+public function setPreco($preco):void{
     $this->valor = $valor;
  }
 
- public function getValor(){
-  return $this->valor;
+ public function getPreco(){
+  return $this->preco;
 }
 
 
 
-/*
-public function setQtd($qtd):void{
-   $this->qtd = $qtd;
-}
 
-
-public function getQtd(){
-   return $this->qtd;
-}
-*/
 
 
 

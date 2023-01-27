@@ -865,8 +865,10 @@ font-family: 'Open Sans', sans-serif;
 
 
 .intru p {
-    /*font-family: 'Open Sans', sans-serif;
-    font-family: "Orelega One", sans-serif;*/
+    /*
+	font-family: 'Open Sans', sans-serif;
+    font-family: "Orelega One", sans-serif;
+	*/
     font-family: 'Lobster', cursive;
     font-weight: bold;
     font-size: 1.6em;
