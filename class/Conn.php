@@ -24,10 +24,10 @@ class Conn {
    
    
    {
-     $this->host="localhost";
-     $this->user="RFagundes";
-     $this->password="UREgoOymPF6LWa7H";
-     $this->db="db_bistro";
+     $this->host="";
+     $this->user="";
+     $this->password="";
+     $this->db="";
 
   
      try{
